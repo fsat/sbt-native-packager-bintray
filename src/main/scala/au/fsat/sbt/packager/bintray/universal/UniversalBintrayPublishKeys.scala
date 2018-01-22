@@ -16,6 +16,15 @@
 
 package au.fsat.sbt.packager.bintray.universal
 
-trait UniversalBintrayPublishKeys {
+import sbt.SettingKey
 
+/**
+  * Keys of the [[UniversalBintrayPublishPlugin]].
+  */
+trait UniversalBintrayPublishKeys {
+  lazy val universalBintrayOrganization = SettingKey[Option[String]]("universal-bintray-organization", "The organization which owns the Universal repository within Bintray.")
+  lazy val universalBintrayRepo = SettingKey[String]("universal-bintray-repo", "The name of the Universal repository within Bintray.")
+  lazy val universalBintrayPackage = SettingKey[String]("universal-bintray-package", "The name of the Universal package.")
+  lazy val universalBintrayPublishZip = SettingKey[Boolean]("universal-bintray-publish-zip", "If set to true, publish the Universal zip artefact to Bintray.")
+  lazy val universalBintrayPublishTgz = SettingKey[Boolean]("universal-bintray-publish-tgz", "If set to true, publish the Universal tgz artefact to Bintray.")
 }

@@ -16,6 +16,17 @@
 
 package au.fsat.sbt.packager.bintray.debian
 
-trait DebianBintrayPublishKeys {
+import sbt.SettingKey
 
+/**
+  * Keys of the [[DebianBintrayPublishPlugin]].
+  */
+trait DebianBintrayPublishKeys {
+  lazy val debianBintrayOrganization = SettingKey[Option[String]]("debian-bintray-organization", "The organization which owns the Debian repository within Bintray.")
+  lazy val debianBintrayRepo = SettingKey[String]("debian-bintray-repo", "The name of the Debian repository within Bintray.")
+  lazy val debianBintrayPackage = SettingKey[String]("debian-bintray-package", "The name of the Debian package.")
+  lazy val debianBintrayPublish = SettingKey[Boolean]("debian-bintray-publish", "If set to true, publish the Debian artefact to Bintray.")
+  lazy val debianBintrayDistributions = SettingKey[Seq[String]]("debian-bintray-distributions", "List of Debian distro supported, i.e. jessie, trusty.")
+  lazy val debianBintrayComponent = SettingKey[String]("debian-bintray-component", "The Debian component name of the archive.")
+  lazy val debianBintrayArchitecture = SettingKey[String]("debian-bintray-architecture", "The architecture supported by the Debian package.")
 }

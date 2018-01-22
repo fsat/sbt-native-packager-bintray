@@ -16,6 +16,14 @@
 
 package au.fsat.sbt.packager.bintray.rpm
 
-trait RpmBintrayPublishKeys {
+import sbt.SettingKey
 
+/**
+  * Keys of the [[RpmBintrayPublishPlugin]].
+  */
+trait RpmBintrayPublishKeys {
+  lazy val rpmBintrayOrganization = SettingKey[Option[String]]("rpm-bintray-organization", "The organization which owns the RPM repository within Bintray.")
+  lazy val rpmBintrayRepo = SettingKey[String]("rpm-bintray-repo", "The name of the RPM repository within Bintray.")
+  lazy val rpmBintrayPackage = SettingKey[String]("rpm-bintray-package", "The name of the RPM package.")
+  lazy val rpmBintrayPublish = SettingKey[Boolean]("rpm-bintray-publish", "If set to true, publish the RPM artefact to Bintray.")
 }
